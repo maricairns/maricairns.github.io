@@ -22,7 +22,6 @@
             position: relative;
         }
         
-        /* Globe background */
         body::before {
             content: '';
             position: fixed;
@@ -32,7 +31,7 @@
             height: 500px;
             background: url('globe.png') no-repeat center;
             background-size: contain;
-            opacity: 0.06;
+            opacity: 0.15;
             transform: translateY(-50%);
             z-index: -1;
             pointer-events: none;
@@ -44,7 +43,6 @@
             padding: 50px 30px;
         }
         
-        /* Back Link */
         .back-link {
             display: inline-block;
             color: #121212;
@@ -64,7 +62,6 @@
             color: #f1ec40;
         }
         
-        /* Header */
         header {
             text-align: center;
             padding: 40px 0;
@@ -84,7 +81,6 @@
             font-weight: 700;
         }
         
-        /* Intro Section with Headshot */
         .intro-section {
             display: grid;
             grid-template-columns: 200px 1fr;
@@ -118,24 +114,38 @@
         
         .intro-text p em {
             font-style: italic;
-            font-weight: 600;
+            font-weight: 400;
         }
         
-        /* Calendly Section */
         .calendly-section {
+            text-align: center;
             margin: 70px 0;
         }
         
-        .calendly-inline-widget {
-            min-width: 320px;
-            height: 700px;
-            margin: 0 auto;
+        .calendly-button {
+            display: inline-block;
+            background: #121212;
+            color: #fff;
+            padding: 22px 55px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 1.3em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 3px solid #121212;
         }
         
-        /* Slogan */
+        .calendly-button:hover {
+            background: #f1ec40;
+            color: #121212;
+            border-color: #f1ec40;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(241, 236, 64, 0.3);
+        }
+        
         .slogan {
             text-align: center;
-            padding: 50px 0;
+            padding: 50px 40px;
             margin: 70px 0 50px 0;
             background: #e2e2e2;
             border-radius: 12px;
@@ -147,7 +157,6 @@
             font-weight: 700;
         }
         
-        /* Footer */
         footer {
             text-align: center;
             padding: 50px 0 30px 0;
@@ -215,13 +224,13 @@
             color: #f1ec40;
         }
         
-        /* Mobile Responsive */
         @media (max-width: 768px) {
             body::before {
                 width: 350px;
                 height: 350px;
                 right: 50%;
                 transform: translate(50%, -50%);
+                opacity: 0.12;
             }
             
             .container {
@@ -242,8 +251,13 @@
                 margin: 0 auto;
             }
             
-            .calendly-inline-widget {
-                height: 600px;
+            .calendly-button {
+                padding: 18px 40px;
+                font-size: 1.1em;
+            }
+            
+            .slogan {
+                padding: 40px 30px;
             }
             
             .slogan h3 {
@@ -285,10 +299,7 @@
         </div>
 
         <div class="calendly-section">
-            <!-- Calendly inline widget begin -->
-            <div class="calendly-inline-widget" data-url="https://calendly.com/mari-cairns-638u/ai-strategic-advising"></div>
-            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-            <!-- Calendly inline widget end -->
+            <a href="https://calendly.com/mari-cairns-638u/ai-strategic-advising" target="_blank" rel="noopener" class="calendly-button">Book AI Strategic Advising</a>
         </div>
 
         <div class="slogan">
