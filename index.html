@@ -22,7 +22,7 @@
             position: relative;
         }
         
-        /* Globe background */
+        /* Globe background - MORE VISIBLE */
         body::before {
             content: '';
             position: fixed;
@@ -32,7 +32,7 @@
             height: 500px;
             background: url('globe.png') no-repeat center;
             background-size: contain;
-            opacity: 0.06;
+            opacity: 0.15;
             transform: translateY(-50%);
             z-index: -1;
             pointer-events: none;
@@ -72,26 +72,31 @@
             font-weight: 500;
         }
         
-        /* Hero Section */
+        /* Hero Section - UPDATED WITH MORE PADDING ON MOBILE */
         .hero {
             text-align: center;
-            padding: 50px 0;
+            padding: 50px 40px;
             background: linear-gradient(135deg, #f1ec40 0%, #f1ec40 100%);
             border-radius: 12px;
-            margin-bottom: 60px;
+            margin-bottom: 25px;
         }
         
         .hero h2 {
             font-size: 2.2em;
             color: #121212;
-            margin-bottom: 20px;
             font-weight: 700;
         }
         
-        .hero p {
+        /* NEW: Tagline below hero box */
+        .hero-tagline {
+            text-align: center;
+            margin: 25px 0 60px 0;
+        }
+        
+        .hero-tagline p {
             font-size: 1.4em;
             color: #121212;
-            font-weight: 500;
+            font-weight: 700;
         }
         
         /* Context Section */
@@ -106,9 +111,10 @@
             line-height: 1.8;
         }
         
+        /* Italics only - NO BOLD */
         .context p em {
             font-style: italic;
-            font-weight: 600;
+            font-weight: 400;
         }
         
         /* Main Section with Headshot */
@@ -136,9 +142,10 @@
             line-height: 1.8;
         }
         
+        /* Italics only - NO BOLD */
         .intro-text p em {
             font-style: italic;
-            font-weight: 600;
+            font-weight: 400;
         }
         
         .intro-text p:first-child {
@@ -181,10 +188,10 @@
             box-shadow: 0 6px 20px rgba(241, 236, 64, 0.3);
         }
         
-        /* Slogan */
+        /* Slogan - UPDATED WITH MORE PADDING ON MOBILE */
         .slogan {
             text-align: center;
-            padding: 50px 0;
+            padding: 50px 40px;
             margin: 70px 0 50px 0;
             background: #e2e2e2;
             border-radius: 12px;
@@ -256,6 +263,7 @@
                 height: 350px;
                 right: 50%;
                 transform: translate(50%, -50%);
+                opacity: 0.12;
             }
             
             .container {
@@ -266,12 +274,18 @@
                 font-size: 2em;
             }
             
+            /* MORE PADDING ON MOBILE */
+            .hero {
+                padding: 40px 30px;
+            }
+            
             .hero h2 {
                 font-size: 1.6em;
             }
             
-            .hero p {
+            .hero-tagline p {
                 font-size: 1.1em;
+                padding: 0 15px;
             }
             
             .main-intro {
@@ -287,6 +301,11 @@
             .cta-button {
                 padding: 18px 40px;
                 font-size: 1.1em;
+            }
+            
+            /* MORE PADDING ON MOBILE */
+            .slogan {
+                padding: 40px 30px;
             }
             
             .slogan h3 {
@@ -313,6 +332,9 @@
 
         <div class="hero">
             <h2>Building Humanity Into The Heart Of AI</h2>
+        </div>
+        
+        <div class="hero-tagline">
             <p>AI is shaping the world. But who is shaping AI?</p>
         </div>
 
