@@ -22,7 +22,6 @@
             position: relative;
         }
         
-        /* Globe background - MUCH DARKER NOW */
         body::before {
             content: '';
             position: fixed;
@@ -44,7 +43,6 @@
             padding: 50px 30px;
         }
         
-        /* Header */
         header {
             text-align: center;
             padding: 40px 0;
@@ -72,7 +70,6 @@
             font-weight: 500;
         }
         
-        /* Hero Section - MATCHED SIZE WITH ADVISORY PAGE */
         .hero {
             text-align: center;
             padding: 50px 40px;
@@ -88,12 +85,10 @@
             line-height: 1.3;
         }
         
-        /* Force line breaks for better formatting */
         .hero h2 br {
             display: block;
         }
         
-        /* Tagline below hero - BIGGER & BOLDER */
         .hero-tagline {
             text-align: center;
             margin: 30px 0 60px 0;
@@ -103,10 +98,14 @@
             font-size: 1.6em;
             color: #121212;
             font-weight: 700;
-            line-height: 1.4;
+            line-height: 1.5;
+            margin-bottom: 0;
         }
         
-        /* Context Section */
+        .hero-tagline p:last-child {
+            margin-top: 8px;
+        }
+        
         .context {
             margin: 60px 0;
         }
@@ -123,7 +122,6 @@
             font-weight: 400;
         }
         
-        /* Main Section with Headshot */
         .main-intro {
             display: grid;
             grid-template-columns: 220px 1fr;
@@ -166,7 +164,6 @@
             border-top: 2px solid #e2e2e2;
         }
         
-        /* CTA Button - SNAPPIER YELLOW HOVER */
         .cta {
             text-align: center;
             margin: 70px 0;
@@ -181,7 +178,7 @@
             border-radius: 10px;
             font-size: 1.3em;
             font-weight: 600;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
             border: 3px solid #121212;
         }
         
@@ -190,10 +187,9 @@
             color: #121212;
             border-color: #f1ec40;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(241, 236, 64, 0.4);
+            box-shadow: 0 6px 20px rgba(241, 236, 64, 0.3);
         }
         
-        /* Slogan */
         .slogan {
             text-align: center;
             padding: 50px 40px;
@@ -209,7 +205,6 @@
             line-height: 1.3;
         }
         
-        /* Footer */
         footer {
             text-align: center;
             padding: 50px 0 30px 0;
@@ -262,7 +257,6 @@
             margin-top: 20px;
         }
         
-        /* Mobile Responsive */
         @media (max-width: 768px) {
             body::before {
                 width: 350px;
@@ -339,7 +333,8 @@
         </div>
         
         <div class="hero-tagline">
-            <p>AI is shaping the world.<br>But who is shaping AI?</p>
+            <p>AI is shaping the world.</p>
+            <p>But who is shaping AI?</p>
         </div>
 
         <div class="context">
