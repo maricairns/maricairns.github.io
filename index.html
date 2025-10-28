@@ -37,6 +37,59 @@
             pointer-events: none;
         }
         
+        /* Hamburger menu */
+        .nav-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .hamburger {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+        
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: #000;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+        
+        .nav-menu {
+            display: none;
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            background: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        
+        .nav-menu.active {
+            display: block;
+        }
+        
+        .nav-menu a {
+            display: block;
+            padding: 10px 20px;
+            color: #000;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        
+        .nav-menu a:hover {
+            color: #f1ec40;
+        }
+        
         .container {
             max-width: 900px;
             margin: 0 auto;
@@ -321,6 +374,20 @@
     </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <div class="nav-container">
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav-menu" id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="advisory.html">Advisory</a>
+            <a href="shop-ai-bears.html">Shop AI Bears</a>
+        </nav>
+    </div>
+
     <div class="container">
         <header>
             <img src="logo.png" alt="Human Factors in AI" class="logo">
@@ -403,5 +470,22 @@
             <p class="copyright">&copy; 2025 Dr Mari Cairns. All rights reserved.</p>
         </footer>
     </div>
+
+    <script>
+        // Hamburger menu toggle
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('navMenu');
+            
+            if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
