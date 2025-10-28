@@ -340,14 +340,23 @@
 
         /* Mobile responsive */
         @media (max-width: 768px) {
-            body {
+            * {
+                max-width: 100%;
+            }
+            
+            html {
                 overflow-x: hidden;
             }
             
-            .container {
-                padding: 30px 15px;
+            body {
+                overflow-x: hidden;
                 width: 100%;
-                max-width: 100vw;
+            }
+            
+            .container {
+                padding: 30px 20px;
+                width: 100%;
+                max-width: 100%;
                 overflow-x: hidden;
             }
             
@@ -355,11 +364,11 @@
                 grid-template-columns: 1fr;
                 gap: 40px;
                 width: 100%;
+                max-width: 100%;
             }
 
             h1 {
-                font-size: 2em;
-                padding: 0 10px;
+                font-size: 1.8em;
             }
 
             .red-box {
@@ -373,84 +382,113 @@
             }
             
             .bear-card {
+                width: 100%;
                 max-width: 100%;
                 overflow: hidden;
-                width: 100%;
             }
             
             .bear-image {
-                max-width: 100%;
                 width: 100%;
+                max-width: 100%;
                 height: auto;
             }
             
-            .bear-details {
-                padding: 15px;
-                margin-top: 20px;
-                margin-left: 0;
-                margin-right: 0;
-                width: 100%;
-                max-width: 100%;
-                box-sizing: border-box;
-                overflow: hidden;
-            }
-
-            .bear-images-carousel {
-                overflow-x: auto;
-                justify-content: flex-start;
-                padding: 10px 0;
-                gap: 8px;
-                -webkit-overflow-scrolling: touch;
-                width: 100%;
-                max-width: 100%;
-            }
-            
-            .bear-images-carousel img {
-                width: 70px;
-                height: 70px;
-                flex-shrink: 0;
-            }
-            
-            .bear-specs {
-                margin: 15px 0;
-                font-size: 0.85em;
-                padding: 0;
+            .bear-name,
+            .bear-price,
+            .bear-price-line {
                 width: 100%;
                 max-width: 100%;
                 overflow-wrap: break-word;
-                word-wrap: break-word;
-                word-break: break-word;
+            }
+            
+            .see-details-btn {
+                width: auto;
+                max-width: 100%;
+            }
+            
+            /* THIS IS THE KEY FIX FOR MOBILE OVERFLOW */
+            .bear-details {
+                padding: 15px 10px !important;
+                margin: 20px -10px 0 -10px !important;
+                width: calc(100% + 20px) !important;
+                max-width: calc(100% + 20px) !important;
+                box-sizing: border-box !important;
+                overflow: hidden !important;
+            }
+
+            .bear-images-carousel {
+                width: 100% !important;
+                max-width: 100% !important;
+                overflow-x: auto !important;
+                overflow-y: hidden !important;
+                justify-content: flex-start !important;
+                padding: 10px 0 !important;
+                gap: 8px !important;
+                -webkit-overflow-scrolling: touch !important;
+                margin: 10px 0 !important;
+            }
+            
+            .bear-images-carousel img {
+                width: 70px !important;
+                height: 70px !important;
+                min-width: 70px !important;
+                flex-shrink: 0 !important;
+            }
+            
+            .bear-specs {
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 15px 0 !important;
+                padding: 0 5px !important;
+                font-size: 0.85em !important;
+                overflow-wrap: break-word !important;
+                word-wrap: break-word !important;
+                word-break: break-word !important;
+                box-sizing: border-box !important;
             }
             
             .bear-specs h3 {
-                font-size: 1em;
-                margin: 15px 0 8px 0;
+                font-size: 1em !important;
+                margin: 15px 0 8px 0 !important;
+                width: 100% !important;
             }
             
             .bear-specs p,
             .bear-specs li {
-                font-size: 0.9em;
-                line-height: 1.5;
+                font-size: 0.9em !important;
+                line-height: 1.5 !important;
+                width: 100% !important;
+                max-width: 100% !important;
             }
             
             .bear-specs ul {
-                padding-right: 0;
+                width: 100% !important;
+                max-width: 100% !important;
+                padding-right: 0 !important;
+                padding-left: 20px !important;
+            }
+            
+            .bear-specs .red-line {
+                width: 100% !important;
+                max-width: 100% !important;
             }
             
             .buy-now-btn {
-                width: 100%;
-                margin: 15px 0;
-                box-sizing: border-box;
-                padding: 15px 20px;
-                font-size: 1em;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 15px 0 !important;
+                box-sizing: border-box !important;
+                padding: 15px 20px !important;
+                font-size: 1em !important;
             }
             
             .hide-details-btn {
-                width: 100%;
-                margin: 10px 0 0 0;
-                box-sizing: border-box;
-                padding: 12px 20px;
-                font-size: 0.9em;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 10px 0 0 0 !important;
+                box-sizing: border-box !important;
+                padding: 12px 20px !important;
+                font-size: 0.9em !important;
             }
         }
     </style>
