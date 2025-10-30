@@ -133,43 +133,69 @@
         
         header h1 {
             font-size: 2.8em;
-            margin-bottom: 12px;
             color: #121212;
             font-weight: 700;
         }
         
-        .intro {
+        .intro-section {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 40px;
+            align-items: start;
             margin: 60px 0;
         }
         
-        .intro p {
-            font-size: 1.15em;
+        .headshot {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #f1ec40;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .intro-text h2 {
+            font-size: 1.6em;
             color: #121212;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+        
+        .intro-text p {
+            font-size: 1.15em;
             margin-bottom: 22px;
+            color: #121212;
             line-height: 1.8;
         }
         
-        .intro p em {
+        .intro-text p em {
             font-style: italic;
             font-weight: 400;
         }
         
-        .cta-button {
+        .intro-text .lens-statement {
+            margin-top: 35px;
+        }
+        
+        .calendly-section {
+            text-align: center;
+            margin: 70px 0;
+        }
+        
+        .calendly-button {
             display: inline-block;
             background: #121212;
             color: #fff;
-            padding: 18px 45px;
+            padding: 22px 55px;
             text-decoration: none;
             border-radius: 10px;
-            font-size: 1.15em;
+            font-size: 1.3em;
             font-weight: 600;
             transition: all 0.3s ease;
             border: 3px solid #121212;
-            text-align: center;
-            white-space: nowrap;
         }
         
-        .cta-button:hover {
+        .calendly-button:hover {
             background: #f1ec40;
             color: #121212;
             border-color: #f1ec40;
@@ -177,9 +203,19 @@
             box-shadow: 0 6px 20px rgba(241, 236, 64, 0.3);
         }
         
-        .button-center {
+        .slogan {
             text-align: center;
-            margin: 70px 0;
+            padding: 50px 40px;
+            margin: 70px 0 50px 0;
+            background: #e2e2e2;
+            border-radius: 12px;
+        }
+        
+        .slogan h3 {
+            font-size: 2em;
+            color: #121212;
+            font-weight: 700;
+            line-height: 1.3;
         }
         
         footer {
@@ -271,9 +307,27 @@
                 font-size: 2em;
             }
             
-            .cta-button {
-                padding: 18px 35px;
-                font-size: 1.05em;
+            .intro-section {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+            
+            .headshot {
+                margin: 0 auto;
+            }
+            
+            .calendly-button {
+                padding: 18px 40px;
+                font-size: 1.1em;
+            }
+            
+            .slogan {
+                padding: 40px 30px;
+            }
+            
+            .slogan h3 {
+                font-size: 1.6em;
             }
             
             .social-icons {
@@ -314,24 +368,35 @@
         <div class="arrow-nav">
             <a href="ai-foundations.html" class="arrow-left">AI Foundations</a>
         </div>
-
+        
         <header>
             <img src="logo.png" alt="Human Factors in AI" class="logo">
             <h1>AI Strategic Advising</h1>
         </header>
 
-        <div class="intro">
-            <p>I help leaders and organisations make smarter, more <em>human-centric</em> decisions about AI.</p>
-            
-            <p>My goal is to ensure that AI implementations are not only technically sound but aligned with <em>long-term strategic goals</em> and <em>human values</em>.</p>
-            
-            <p>Whether you are building, buying, or adopting AI, I provide <em>tailored guidance</em> to navigate the complexities of AI strategy, governance, and deployment.</p>
-            
-            <p>From risk assessment to ethical frameworks, I bring a <em>unique blend</em> of clinical psychology expertise and strategic insight to help you harness AI <em>responsibly</em> and <em>effectively</em>.</p>
+        <div class="intro-section">
+            <img src="headshot.png" alt="Dr Mari Cairns" class="headshot">
+            <div class="intro-text">
+                <h2>Adopting AI in your company or startup?</h2>
+                
+                <p>AI in your company is not only a business or technology challenge—it is a <em>combined</em> business, technology, <em>and</em> people challenge.</p>
+                
+                <p>I focus on the business strategy, the technical realities, <em>and</em> the human factors of your company in your AI strategic planning, adoption, and implementation.</p>
+                
+                <p>This combination is exceptionally rare. And extraordinarily valuable for 'making it stick'. Factoring in all the moving parts. At any given stage.</p>
+                
+                <p>I help you solve the business, technical, and human challenges.</p>
+                
+                <p class="lens-statement">Through an AI-Human lens.</p>
+            </div>
         </div>
 
-        <div class="button-center">
-            <a href="https://calendly.com/maricairns/ai-strategic-advising" class="cta-button" target="_blank" rel="noopener">Book AI Strategic Advising</a>
+        <div class="calendly-section">
+            <a href="https://calendly.com/mari-cairns-638u/ai-strategic-advising" target="_blank" rel="noopener" class="calendly-button">Book AI Strategic Advising</a>
+        </div>
+
+        <div class="slogan">
+            <h3>I Help You Make AI<br>Go Well In Your Company</h3>
         </div>
 
         <footer>
