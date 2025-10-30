@@ -20,10 +20,8 @@
             color: #121212;
             background: #fff;
             position: relative;
-            overflow-x: hidden;
         }
         
-        /* Globe background with scroll effect */
         body::before {
             content: '';
             position: fixed;
@@ -39,67 +37,89 @@
             pointer-events: none;
         }
         
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 50px 30px;
-            position: relative;
+        /* Hamburger menu */
+        .nav-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
         }
         
-        /* Hamburger Menu */
         .hamburger {
-            position: fixed;
-            top: 30px;
-            right: 30px;
-            z-index: 1000;
-            cursor: pointer;
             background: none;
             border: none;
+            cursor: pointer;
             padding: 10px;
         }
         
         .hamburger span {
             display: block;
-            width: 30px;
+            width: 25px;
             height: 3px;
-            background: #121212;
-            margin: 6px 0;
+            background: #000;
+            margin: 5px 0;
             transition: 0.3s;
         }
         
         .nav-menu {
+            display: none;
             position: fixed;
-            top: 0;
-            right: -300px;
-            width: 300px;
-            height: 100vh;
-            background: #fff;
-            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
-            padding: 80px 30px 30px 30px;
-            transition: right 0.3s ease;
-            z-index: 999;
+            top: 70px;
+            right: 20px;
+            background: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
         }
         
         .nav-menu.active {
-            right: 0;
+            display: block;
         }
         
         .nav-menu a {
             display: block;
-            padding: 15px 0;
-            color: #121212;
+            padding: 10px 20px;
+            color: #000;
             text-decoration: none;
-            font-size: 1.1em;
+            transition: color 0.3s;
             font-weight: 500;
-            border-bottom: 1px solid #f0f0f0;
-            transition: color 0.3s ease;
         }
         
         .nav-menu a:hover {
             color: #f1ec40;
         }
         
-        /* Header */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px 30px;
+        }
+        
+        /* Arrow navigation */
+        .arrow-nav {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 35px;
+            font-size: 1.05em;
+            font-weight: 500;
+        }
+        
+        .arrow-nav a {
+            color: #121212;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .arrow-nav a:hover {
+            color: #f1ec40;
+        }
+        
+        .arrow-nav .arrow-right::after {
+            content: " →";
+            color: #f1ec40;
+        }
+        
         header {
             text-align: center;
             padding: 40px 0;
@@ -118,7 +138,6 @@
             margin-bottom: 12px;
             color: #121212;
             font-weight: 700;
-            line-height: 1.2;
         }
         
         .credentials {
@@ -128,125 +147,197 @@
             font-weight: 500;
         }
         
-        /* Hero Section */
         .hero {
             text-align: center;
             padding: 50px 40px;
             background: linear-gradient(135deg, #f1ec40 0%, #f1ec40 100%);
             border-radius: 12px;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 15px rgba(241, 236, 64, 0.2);
+            margin-bottom: 25px;
         }
         
         .hero h2 {
-            font-size: 1.8em;
-            margin-bottom: 20px;
+            font-size: 2.8em;
             color: #121212;
-            font-weight: 600;
-            line-height: 1.4;
+            font-weight: 700;
+            line-height: 1.3;
         }
         
-        .hero p {
-            font-size: 1.15em;
-            color: #333;
-            font-weight: 500;
+        .hero h2 br {
+            display: block;
+        }
+        
+        .hero-tagline {
+            text-align: center;
+            margin: 30px 0 60px 0;
+        }
+        
+        .hero-tagline p {
+            font-size: 1.6em;
+            color: #121212;
+            font-weight: 700;
+            line-height: 1.5;
             margin-bottom: 0;
         }
         
-        /* Buttons Container */
+        .hero-tagline p:last-child {
+            margin-top: 8px;
+        }
+        
+        .context {
+            margin: 60px 0;
+        }
+        
+        .context p {
+            font-size: 1.15em;
+            color: #121212;
+            margin-bottom: 22px;
+            line-height: 1.8;
+        }
+        
+        .context p em {
+            font-style: italic;
+            font-weight: 400;
+        }
+        
+        .main-intro {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 45px;
+            align-items: start;
+            margin: 60px 0;
+        }
+        
+        .headshot {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #f1ec40;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .intro-text p {
+            font-size: 1.15em;
+            margin-bottom: 22px;
+            color: #121212;
+            line-height: 1.8;
+        }
+        
+        .intro-text p em {
+            font-style: italic;
+            font-weight: 400;
+        }
+        
+        .intro-text p:first-child {
+            font-size: 1.2em;
+        }
+        
+        .transition-note {
+            font-size: 1.1em;
+            color: #121212;
+            font-weight: 600;
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 2px solid #e2e2e2;
+        }
+        
+        /* Two button container */
         .button-container {
             display: flex;
             gap: 20px;
             justify-content: center;
-            margin: 40px 0;
+            margin: 70px 0;
         }
         
-        .btn {
+        .cta-button {
             display: inline-block;
-            padding: 16px 32px;
             background: #121212;
             color: #fff;
+            padding: 22px 55px;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 10px;
+            font-size: 1.3em;
             font-weight: 600;
-            font-size: 1.05em;
             transition: all 0.3s ease;
-            text-align: center;
+            border: 3px solid #121212;
             flex: 1;
-            max-width: 280px;
+            max-width: 320px;
+            text-align: center;
         }
         
-        .btn:hover {
+        .cta-button:hover {
             background: #f1ec40;
             color: #121212;
+            border-color: #f1ec40;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(241, 236, 64, 0.3);
+            box-shadow: 0 6px 20px rgba(241, 236, 64, 0.3);
         }
         
-        /* Content Box */
-        .content-box {
-            background: #f9f9f9;
-            padding: 40px;
+        .slogan {
+            text-align: center;
+            padding: 50px 40px;
+            margin: 70px 0 50px 0;
+            background: #e2e2e2;
             border-radius: 12px;
-            margin-bottom: 50px;
         }
         
-        .content-box h3 {
-            font-size: 1.5em;
-            margin-bottom: 20px;
+        .slogan h3 {
+            font-size: 2em;
             color: #121212;
-            font-weight: 600;
+            font-weight: 700;
+            line-height: 1.3;
         }
         
-        .content-box p {
-            margin-bottom: 15px;
-            color: #333;
-            font-size: 1.05em;
-            line-height: 1.8;
-        }
-        
-        .content-box p:last-child {
-            margin-bottom: 0;
-        }
-        
-        /* Footer */
         footer {
             text-align: center;
             padding: 50px 0 30px 0;
-            border-top: 2px solid #f0f0f0;
-            color: #7b7a77;
+            margin-top: 70px;
+            border-top: 4px solid #f1ec40;
         }
         
-        .tagline {
+        .footer-logo {
+            max-width: 120px;
+            margin: 0 auto 20px auto;
+            display: block;
+        }
+        
+        .footer-tagline {
             font-size: 1.1em;
+            color: #121212;
+            margin: 15px 0;
             font-weight: 500;
-            color: #121212;
-            margin-bottom: 25px;
         }
         
-        .social-links {
+        .footer-subline {
+            font-size: 0.95em;
+            color: #7b7a77;
+            margin: 10px 0 25px 0;
+        }
+        
+        .social-icons {
             margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
         }
         
-        .social-links a {
-            display: inline-block;
-            margin: 0 12px;
+        .social-icons a {
             color: #121212;
-            transition: color 0.3s ease;
+            font-size: 1.8em;
+            transition: color 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
         }
         
-        .social-links a:hover {
+        .social-icons a:hover {
             color: #f1ec40;
-        }
-        
-        .social-links svg {
-            width: 24px;
-            height: 24px;
+            transform: translateY(-2px);
         }
         
         .copyright {
-            font-size: 0.95em;
-            margin: 20px 0;
+            font-size: 0.9em;
+            color: #7b7a77;
+            margin-top: 20px;
         }
         
         .footer-nav {
@@ -265,22 +356,44 @@
             color: #f1ec40;
         }
         
-        /* Mobile Responsive */
         @media (max-width: 768px) {
+            body::before {
+                width: 350px;
+                height: 350px;
+                right: 50%;
+                transform: translate(50%, -50%);
+                opacity: 0.25;
+            }
+            
+            .container {
+                padding: 30px 20px;
+            }
+            
             header h1 {
                 font-size: 2em;
             }
             
             .hero {
-                padding: 35px 25px;
+                padding: 40px 30px;
             }
             
             .hero h2 {
-                font-size: 1.4em;
+                font-size: 1.8em;
             }
             
-            .hero p {
-                font-size: 1.05em;
+            .hero-tagline p {
+                font-size: 1.2em;
+                padding: 0 15px;
+            }
+            
+            .main-intro {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+            
+            .headshot {
+                margin: 0 auto;
             }
             
             .button-container {
@@ -288,91 +401,132 @@
                 gap: 15px;
             }
             
-            .btn {
+            .cta-button {
+                padding: 18px 40px;
+                font-size: 1.1em;
                 max-width: 100%;
-                width: 100%;
             }
             
-            .content-box {
-                padding: 30px 25px;
+            .slogan {
+                padding: 40px 30px;
             }
             
-            .hamburger {
-                top: 20px;
-                right: 20px;
+            .slogan h3 {
+                font-size: 1.6em;
             }
             
-            .footer-nav a {
-                margin: 0 8px;
-                font-size: 0.9em;
+            .social-icons {
+                gap: 25px;
+            }
+            
+            .social-icons a {
+                font-size: 1.5em;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Hamburger Menu -->
-    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-    
-    <nav class="nav-menu" id="navMenu">
-        <a href="index.html">Home</a>
-        <a href="ai-foundations.html">AI Foundations</a>
-        <a href="ai-strategic-advising.html">AI Strategic Advising</a>
-        <a href="shop-ai-bears.html">Shop AI Bears</a>
-    </nav>
+    <!-- Navigation -->
+    <div class="nav-container">
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav-menu" id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="ai-foundations.html">AI Foundations</a>
+            <a href="ai-strategic-advising.html">AI Strategic Advising</a>
+            <a href="shop-ai-bears.html">Shop AI Bears</a>
+        </nav>
+    </div>
 
     <div class="container">
-        <header>
-            <img src="logo.png" alt="Human Factors in AI Logo" class="logo">
-            <h1>Dr Mari Cairns</h1>
-            <p class="credentials">DClinPsych (Oxford) | MBA | HCPC Registered</p>
-        </header>
-
-        <section class="hero">
-            <h2>I am a bridge between the technical and the non-technical in the race to help make AI go well.</h2>
-            <p>Transitioning to AI Safety & Alignment.</p>
-        </section>
-
-        <div class="button-container">
-            <a href="ai-foundations.html" class="btn">AI Foundations</a>
-            <a href="ai-strategic-advising.html" class="btn">AI Strategic Advising</a>
+        <!-- Arrow Navigation -->
+        <div class="arrow-nav">
+            <a href="ai-foundations.html" class="arrow-right">AI Foundations</a>
         </div>
 
-        <div class="content-box">
-            <p>I apply clinical psychology and human factors expertise to AI model behaviour and AI alignment challenges.</p>
+        <header>
+            <img src="logo.png" alt="Human Factors in AI" class="logo">
+            <h1>Dr Mari Cairns</h1>
+            <p class="credentials">DClinPsych (University of Oxford) CPsychol AFBPsS MBA</p>
+        </header>
+
+        <div class="hero">
+            <h2>Building Humanity Into<br>The Heart Of AI</h2>
+        </div>
+        
+        <div class="hero-tagline">
+            <p>AI is shaping the world.</p>
+            <p>But who is shaping AI?</p>
+        </div>
+
+        <div class="context">
+            <p>Human factors play a core part in all of artificial intelligence.</p>
             
-            <p>My unique combination of background and expertise focuses on connecting people, processes, data, and technology and the complex nuances and interconnections at any given time.</p>
+            <p>We build AI. Buy AI. Use AI. And engage with AI. AI-Human factors impact artificial intelligence at <em>every</em> level.</p>
             
-            <p><strong>People. Processes. Data. Technology.</strong></p>
+            <p>AI-Human factors are core across building, regulating, and adopting AI.</p>
+            
+            <p>And AI-Human factors are core across individual, organisational, and societal levels.</p>
+            
+            <p>AI's impact extends far beyond technology—with direct, indirect, intended, and unintended consequences.</p>
+        </div>
+
+        <div class="main-intro">
+            <img src="headshot.png" alt="Dr Mari Cairns" class="headshot">
+            <div class="intro-text">
+                <p>I focus on the intersection of humans and AI—in the context of long-term safety.</p>
+                
+                <p>Ensuring alignment with human values as AI systems scale, and become increasingly powerful.</p>
+                
+                <p>We are building AI for 8.25 billion humans.</p>
+                
+                <p>AI-Human factors—where I come in—are a core part across <em>all</em> areas of AI Safety.</p>
+                
+                <p>And AI-Human factors are a core part of solving some of the biggest AI Alignment challenges.</p>
+                
+                <p>I am a bridge between the technical and the non-technical in the race to help make AI go well.</p>
+                
+                <p>I apply clinical psychology and human factors expertise to AI model behaviour and personality to, in turn, help solve AI alignment challenges.</p>
+                
+                <p class="transition-note">Transitioning to AI Safety \ Open to AI Alignment</p>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <a href="ai-foundations.html" class="cta-button">AI Foundations</a>
+            <a href="ai-strategic-advising.html" class="cta-button">AI Strategic Advising</a>
+        </div>
+
+        <div class="slogan">
+            <h3>Helping Make AI Go Well</h3>
         </div>
 
         <footer>
-            <p class="tagline">People. Processes. Data. Technology.</p>
-            
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/maricairns/" target="_blank" aria-label="LinkedIn">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
+            <img src="logo.png" alt="Human Factors in AI" class="footer-logo">
+            <p class="footer-tagline">Made with ☕️ and 💛</p>
+            <p class="footer-subline">people • processes • data • technology</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/maricairns/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                     </svg>
                 </a>
-                <a href="https://github.com/maricairns" target="_blank" aria-label="GitHub">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
+                <a href="mailto:mari.cairns@gmail.com" aria-label="Email">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/maricairns" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                     </svg>
                 </a>
-                <a href="mailto:mari.cairns@gmail.com" aria-label="Email">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                </a>
             </div>
-            
-            <p class="copyright">© 2025 Dr Mari Cairns. All rights reserved.</p>
-            
+            <p class="copyright">&copy; 2025 Dr Mari Cairns. All rights reserved.</p>
             <div class="footer-nav">
                 <a href="index.html">Home</a>
                 <a href="ai-foundations.html">AI Foundations</a>
@@ -382,18 +536,18 @@
     </div>
 
     <script>
-        function toggleMenu() {
-            const menu = document.getElementById('navMenu');
-            menu.classList.toggle('active');
-        }
-        
+        // Hamburger menu toggle
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+
         // Close menu when clicking outside
         document.addEventListener('click', function(event) {
-            const menu = document.getElementById('navMenu');
-            const hamburger = document.querySelector('.hamburger');
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('navMenu');
             
-            if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
-                menu.classList.remove('active');
+            if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
+                navMenu.classList.remove('active');
             }
         });
     </script>
