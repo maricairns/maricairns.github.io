@@ -96,30 +96,6 @@
             padding: 50px 30px;
         }
         
-        /* Arrow navigation */
-        .arrow-nav {
-            display: flex;
-            justify-content: flex-end;
-            margin-bottom: 35px;
-            font-size: 1.05em;
-            font-weight: 500;
-        }
-        
-        .arrow-nav a {
-            color: #121212;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .arrow-nav a:hover {
-            color: #f1ec40;
-        }
-        
-        .arrow-nav .arrow-right::after {
-            content: " →";
-            color: #f1ec40;
-        }
-        
         header {
             text-align: center;
             padding: 40px 0;
@@ -241,11 +217,8 @@
             border-top: 2px solid #e2e2e2;
         }
         
-        /* Two button container */
-        .button-container {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
+        .cta {
+            text-align: center;
             margin: 70px 0;
         }
         
@@ -260,9 +233,6 @@
             font-weight: 600;
             transition: all 0.3s ease;
             border: 3px solid #121212;
-            flex: 1;
-            max-width: 320px;
-            text-align: center;
         }
         
         .cta-button:hover {
@@ -340,22 +310,6 @@
             margin-top: 20px;
         }
         
-        .footer-nav {
-            margin-top: 25px;
-            font-size: 0.95em;
-        }
-        
-        .footer-nav a {
-            color: #121212;
-            text-decoration: none;
-            margin: 0 15px;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-nav a:hover {
-            color: #f1ec40;
-        }
-        
         @media (max-width: 768px) {
             body::before {
                 width: 350px;
@@ -396,15 +350,9 @@
                 margin: 0 auto;
             }
             
-            .button-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
             .cta-button {
                 padding: 18px 40px;
                 font-size: 1.1em;
-                max-width: 100%;
             }
             
             .slogan {
@@ -435,18 +383,12 @@
         </button>
         <nav class="nav-menu" id="navMenu">
             <a href="index.html">Home</a>
-            <a href="ai-foundations.html">AI Foundations</a>
-            <a href="ai-strategic-advising.html">AI Strategic Advising</a>
+            <a href="advisory.html">Advisory</a>
             <a href="shop-ai-bears.html">Shop AI Bears</a>
         </nav>
     </div>
 
     <div class="container">
-        <!-- Arrow Navigation -->
-        <div class="arrow-nav">
-            <a href="ai-foundations.html" class="arrow-right">AI Foundations</a>
-        </div>
-
         <header>
             <img src="logo.png" alt="Human Factors in AI" class="logo">
             <h1>Dr Mari Cairns</h1>
@@ -495,9 +437,8 @@
             </div>
         </div>
 
-        <div class="button-container">
-            <a href="ai-foundations.html" class="cta-button">AI Foundations</a>
-            <a href="ai-strategic-advising.html" class="cta-button">AI Strategic Advising</a>
+        <div class="cta">
+            <a href="advisory.html" class="cta-button">AI Strategic Advising</a>
         </div>
 
         <div class="slogan">
@@ -527,11 +468,6 @@
                 </a>
             </div>
             <p class="copyright">&copy; 2025 Dr Mari Cairns. All rights reserved.</p>
-            <div class="footer-nav">
-                <a href="index.html">Home</a>
-                <a href="ai-foundations.html">AI Foundations</a>
-                <a href="ai-strategic-advising.html">AI Strategic Advising</a>
-            </div>
         </footer>
     </div>
 
