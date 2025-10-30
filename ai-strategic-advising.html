@@ -37,7 +37,6 @@
             pointer-events: none;
         }
         
-        /* Hamburger menu */
         .nav-container {
             position: fixed;
             top: 20px;
@@ -96,21 +95,25 @@
             padding: 50px 30px;
         }
         
-        .back-link {
-            display: inline-block;
-            color: #121212;
-            text-decoration: none;
+        .arrow-nav {
+            display: flex;
+            justify-content: flex-start;
             margin-bottom: 35px;
             font-size: 1.05em;
             font-weight: 500;
+        }
+        
+        .arrow-nav a {
+            color: #121212;
+            text-decoration: none;
             transition: color 0.3s ease;
         }
         
-        .back-link:hover {
+        .arrow-nav a:hover {
             color: #f1ec40;
         }
         
-        .back-link::before {
+        .arrow-nav .arrow-left::before {
             content: "← ";
             color: #f1ec40;
         }
@@ -130,69 +133,43 @@
         
         header h1 {
             font-size: 2.8em;
+            margin-bottom: 12px;
             color: #121212;
             font-weight: 700;
         }
         
-        .intro-section {
-            display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 40px;
-            align-items: start;
+        .intro {
             margin: 60px 0;
         }
         
-        .headshot {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid #f1ec40;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        
-        .intro-text h2 {
-            font-size: 1.6em;
-            color: #121212;
-            margin-bottom: 25px;
-            font-weight: 700;
-        }
-        
-        .intro-text p {
+        .intro p {
             font-size: 1.15em;
-            margin-bottom: 22px;
             color: #121212;
+            margin-bottom: 22px;
             line-height: 1.8;
         }
         
-        .intro-text p em {
+        .intro p em {
             font-style: italic;
             font-weight: 400;
         }
         
-        .intro-text .lens-statement {
-            margin-top: 35px;
-        }
-        
-        .calendly-section {
-            text-align: center;
-            margin: 70px 0;
-        }
-        
-        .calendly-button {
+        .cta-button {
             display: inline-block;
             background: #121212;
             color: #fff;
-            padding: 22px 55px;
+            padding: 18px 45px;
             text-decoration: none;
             border-radius: 10px;
-            font-size: 1.3em;
+            font-size: 1.15em;
             font-weight: 600;
             transition: all 0.3s ease;
             border: 3px solid #121212;
+            text-align: center;
+            white-space: nowrap;
         }
         
-        .calendly-button:hover {
+        .cta-button:hover {
             background: #f1ec40;
             color: #121212;
             border-color: #f1ec40;
@@ -200,19 +177,9 @@
             box-shadow: 0 6px 20px rgba(241, 236, 64, 0.3);
         }
         
-        .slogan {
+        .button-center {
             text-align: center;
-            padding: 50px 40px;
-            margin: 70px 0 50px 0;
-            background: #e2e2e2;
-            border-radius: 12px;
-        }
-        
-        .slogan h3 {
-            font-size: 2em;
-            color: #121212;
-            font-weight: 700;
-            line-height: 1.3;
+            margin: 70px 0;
         }
         
         footer {
@@ -267,18 +234,19 @@
             margin-top: 20px;
         }
         
-        .footer-back {
-            margin-top: 20px;
+        .footer-nav {
+            margin-top: 25px;
+            font-size: 0.95em;
         }
         
-        .footer-back a {
+        .footer-nav a {
             color: #121212;
             text-decoration: none;
-            font-weight: 500;
+            margin: 0 15px;
             transition: color 0.3s ease;
         }
         
-        .footer-back a:hover {
+        .footer-nav a:hover {
             color: #f1ec40;
         }
         
@@ -295,31 +263,17 @@
                 padding: 30px 20px;
             }
             
+            .arrow-nav {
+                display: none;
+            }
+            
             header h1 {
                 font-size: 2em;
             }
             
-            .intro-section {
-                grid-template-columns: 1fr;
-                gap: 30px;
-                text-align: center;
-            }
-            
-            .headshot {
-                margin: 0 auto;
-            }
-            
-            .calendly-button {
-                padding: 18px 40px;
-                font-size: 1.1em;
-            }
-            
-            .slogan {
-                padding: 40px 30px;
-            }
-            
-            .slogan h3 {
-                font-size: 1.6em;
+            .cta-button {
+                padding: 18px 35px;
+                font-size: 1.05em;
             }
             
             .social-icons {
@@ -329,11 +283,19 @@
             .social-icons a {
                 font-size: 1.5em;
             }
+            
+            .footer-nav {
+                font-size: 0.75em;
+            }
+            
+            .footer-nav a {
+                margin: 0 5px;
+                white-space: nowrap;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <div class="nav-container">
         <button class="hamburger" id="hamburger" aria-label="Menu">
             <span></span>
@@ -342,42 +304,34 @@
         </button>
         <nav class="nav-menu" id="navMenu">
             <a href="index.html">Home</a>
-            <a href="advisory.html">Advisory</a>
+            <a href="ai-foundations.html">AI Foundations</a>
+            <a href="ai-strategic-advising.html">AI Strategic Advising</a>
             <a href="shop-ai-bears.html">Shop AI Bears</a>
         </nav>
     </div>
 
     <div class="container">
-        <a href="index.html" class="back-link">Back to Home</a>
-        
+        <div class="arrow-nav">
+            <a href="ai-foundations.html" class="arrow-left">AI Foundations</a>
+        </div>
+
         <header>
             <img src="logo.png" alt="Human Factors in AI" class="logo">
             <h1>AI Strategic Advising</h1>
         </header>
 
-        <div class="intro-section">
-            <img src="headshot.png" alt="Dr Mari Cairns" class="headshot">
-            <div class="intro-text">
-                <h2>Adopting AI in your company or startup?</h2>
-                
-                <p>AI in your company is not only a business or technology challenge—it is a <em>combined</em> business, technology, <em>and</em> people challenge.</p>
-                
-                <p>I focus on the business strategy, the technical realities, <em>and</em> the human factors of your company in your AI strategic planning, adoption, and implementation.</p>
-                
-                <p>This combination is exceptionally rare. And extraordinarily valuable for 'making it stick'. Factoring in all the moving parts. At any given stage.</p>
-                
-                <p>I help you solve the business, technical, and human challenges.</p>
-                
-                <p class="lens-statement">Through an AI-Human lens.</p>
-            </div>
+        <div class="intro">
+            <p>I help leaders and organisations make smarter, more <em>human-centric</em> decisions about AI.</p>
+            
+            <p>My goal is to ensure that AI implementations are not only technically sound but aligned with <em>long-term strategic goals</em> and <em>human values</em>.</p>
+            
+            <p>Whether you are building, buying, or adopting AI, I provide <em>tailored guidance</em> to navigate the complexities of AI strategy, governance, and deployment.</p>
+            
+            <p>From risk assessment to ethical frameworks, I bring a <em>unique blend</em> of clinical psychology expertise and strategic insight to help you harness AI <em>responsibly</em> and <em>effectively</em>.</p>
         </div>
 
-        <div class="calendly-section">
-            <a href="https://calendly.com/mari-cairns-638u/ai-strategic-advising" target="_blank" rel="noopener" class="calendly-button">Book AI Strategic Advising</a>
-        </div>
-
-        <div class="slogan">
-            <h3>I Help You Make AI<br>Go Well In Your Company</h3>
+        <div class="button-center">
+            <a href="https://calendly.com/maricairns/ai-strategic-advising" class="cta-button" target="_blank" rel="noopener">Book AI Strategic Advising</a>
         </div>
 
         <footer>
@@ -403,17 +357,19 @@
                 </a>
             </div>
             <p class="copyright">&copy; 2025 Dr Mari Cairns. All rights reserved.</p>
-            <p class="footer-back"><a href="index.html">Back to Home</a></p>
+            <div class="footer-nav">
+                <a href="index.html">Home</a>
+                <a href="ai-foundations.html">AI Foundations</a>
+                <a href="ai-strategic-advising.html">AI Strategic Advising</a>
+            </div>
         </footer>
     </div>
 
     <script>
-        // Hamburger menu toggle
         document.getElementById('hamburger').addEventListener('click', function() {
             document.getElementById('navMenu').classList.toggle('active');
         });
 
-        // Close menu when clicking outside
         document.addEventListener('click', function(event) {
             const hamburger = document.getElementById('hamburger');
             const navMenu = document.getElementById('navMenu');
