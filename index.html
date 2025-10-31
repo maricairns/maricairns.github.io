@@ -181,6 +181,10 @@
             margin-top: 8px;
         }
         
+        .mobile-break {
+            display: none;
+        }
+        
         .context {
             margin: 60px 0;
         }
@@ -224,10 +228,6 @@
         .intro-text p em {
             font-style: italic;
             font-weight: 400;
-        }
-        
-        .intro-text p:first-child {
-            font-size: 1.2em;
         }
         
         .transition-note {
@@ -388,6 +388,10 @@
                 padding: 0 15px;
             }
             
+            .mobile-break {
+                display: block;
+            }
+            
             .main-intro {
                 grid-template-columns: 1fr;
                 gap: 30px;
@@ -467,7 +471,7 @@
         </div>
         
         <div class="hero-tagline">
-            <p>AI is shaping the world.</p>
+            <p>AI is shaping the world.<br class="mobile-break"></p>
             <p>But who is shaping AI?</p>
         </div>
 
