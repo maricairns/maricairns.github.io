@@ -36,86 +36,11 @@
             z-index: -1;
             pointer-events: none;
         }
-        
-        .nav-container {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
-        
-        .hamburger {
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 10px;
-        }
-        
-        .hamburger span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background: #000;
-            margin: 5px 0;
-            transition: 0.3s;
-        }
-        
-        .nav-menu {
-            display: none;
-            position: fixed;
-            top: 70px;
-            right: 20px;
-            background: white;
-            border: 1px solid #ddd;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            border-radius: 8px;
-        }
-        
-        .nav-menu.active {
-            display: block;
-        }
-        
-        .nav-menu a {
-            display: block;
-            padding: 10px 20px;
-            color: #000;
-            text-decoration: none;
-            transition: color 0.3s;
-            font-weight: 500;
-        }
-        
-        .nav-menu a:hover {
-            color: #f1ec40;
-        }
-        
+
         .container {
             max-width: 900px;
             margin: 0 auto;
             padding: 50px 30px;
-        }
-        
-        .arrow-nav {
-            display: flex;
-            justify-content: flex-end;
-            margin-bottom: 35px;
-            font-size: 1.05em;
-            font-weight: 500;
-        }
-        
-        .arrow-nav a {
-            color: #121212;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .arrow-nav a:hover {
-            color: #f1ec40;
-        }
-        
-        .arrow-nav .arrow-right::after {
-            content: " →";
-            color: #f1ec40;
         }
         
         header {
@@ -222,38 +147,6 @@
             color: #7b7a77;
         }
         
-        .button-container {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin: 50px 0 70px 0;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: #121212;
-            color: #fff;
-            padding: 18px 45px;
-            text-decoration: none;
-            border-radius: 10px;
-            font-size: 1.15em;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 3px solid #121212;
-            flex: 1;
-            max-width: 400px;
-            text-align: center;
-            white-space: nowrap;
-        }
-        
-        .cta-button:hover {
-            background: #f1ec40;
-            color: #121212;
-            border-color: #f1ec40;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(241, 236, 64, 0.3);
-        }
-        
         .slogan {
             text-align: center;
             padding: 50px 40px;
@@ -320,23 +213,7 @@
             color: #7b7a77;
             margin-top: 20px;
         }
-        
-        .footer-nav {
-            margin-top: 25px;
-            font-size: 0.95em;
-        }
-        
-        .footer-nav a {
-            color: #121212;
-            text-decoration: none;
-            margin: 0 15px;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-nav a:hover {
-            color: #f1ec40;
-        }
-        
+
         @media (max-width: 768px) {
             body::before {
                 width: 350px;
@@ -348,10 +225,6 @@
             
             .container {
                 padding: 30px 20px;
-            }
-            
-            .arrow-nav {
-                display: none;
             }
             
             header h1 {
@@ -385,17 +258,6 @@
                 margin: 0 auto;
             }
             
-            .button-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .cta-button {
-                padding: 18px 45px;
-                font-size: 1.15em;
-                max-width: 100%;
-            }
-            
             .slogan {
                 padding: 40px 30px;
             }
@@ -411,37 +273,12 @@
             .social-icons a {
                 font-size: 1.5em;
             }
-            
-            .footer-nav {
-                font-size: 0.75em;
-            }
-            
-            .footer-nav a {
-                margin: 0 5px;
-                white-space: nowrap;
-            }
         }
     </style>
 </head>
 <body>
-    <div class="nav-container">
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <nav class="nav-menu" id="navMenu">
-            <a href="index.html">Home</a>
-            <a href="ai-foundations.html">AI Foundations</a>
-            <a href="ai-strategic-advising.html">AI Strategic Advising</a>
-            <a href="shop-ai-bears.html">Shop AI Bears</a>
-        </nav>
-    </div>
 
     <div class="container">
-        <div class="arrow-nav">
-            <a href="ai-foundations.html" class="arrow-right">AI Foundations</a>
-        </div>
 
         <header>
             <img src="logo.png" alt="Human Factors in AI" class="logo">
@@ -450,57 +287,60 @@
         </header>
 
         <div class="hero">
-            <h2>We Are Building AI For<br>8.25+ Billion Humans</h2>
+            <h2>We Are Building AI For<br>8.27+ Billion Humans</h2>
         </div>
         
         <div class="hero-tagline">
-            <h2>AI is shaping the world. Who is shaping AI?</h2>
+            <h2>AI is shaping the world. But who is shaping AI, including AI shaping AI?</h2>
         </div>
 
         <div class="context">
             <p>Human factors play a core part in artificial intelligence.</p>
             
-            <p>We build artificial intelligence. Buy artificial intelligence. Use artificial intelligence. And engage with artificial intelligence. AI-Human factors impact artificial intelligence at every level.</p>
+            <p>And AI's impacts extend far beyond technology.</p>
             
-            <p>AI-Human factors in Building AI • AI-Human factors in Regulating AI • AI-Human factors in Adopting AI</p>
+            <p>With direct, indirect, intended, and unintended consequences.</p>
             
-            <p>AI-Human factors at Individual level • AI-Human factors at Organisational level • AI-Human factors at Societal level</p>
+            <p>And with nuance, and connections, and interconnections between all these.</p>
             
-            <p>With connections and interconnections between all these.</p>
+            <p>AI will impact us at every level. At individual, organisational, and societal levels. At scale and exponentially. And I don't believe we're ready.</p>
             
-            <p>AI's impacts extend far beyond technology. With direct, indirect, intended, and unintended consequences.</p>
+            <p>With trade-offs, impacts, direct and indirect effects, intended and unintended consequences, and in ways we haven't yet fully imagined.</p>
+            
+            <p>AI will also compound what we have in society, overtly and covertly.</p>
+            
+            <p>It goes far beyond what we build and do today. And it's vital that we continue to ask the right questions. Past, present, and for way into the future.</p>
+            
+            <p>We use artificial intelligence as a tool now. But in the future, it will impact our actual humanity.</p>
         </div>
 
         <div class="main-intro">
             <img src="headshot.png" alt="Dr Mari Cairns" class="headshot">
             <div class="intro-text">
-                <p>Artificial intelligence is changing how we work and live. And it will impact all of us.</p>
-                
-                <p>AI-Human factors (where I come in) are a core part across all areas of AI.</p>
-                
-                <p>AI-Human factors are a core part across all areas of AI safety.</p>
-                
-                <p>And increasingly so as AI systems scale and become increasingly powerful.</p>
+                <p>My career focus has increasingly shifted to apply clinical psychology and human factors expertise to AI model behaviour and personality to, in turn, help solve AI alignment challenges.</p>
                 
                 <p>I believe human factors domain expertise is vital at the source of the river.</p>
                 
                 <p>Where AI models are built.</p>
                 
-                <p>Where AI is trained, fine-tuned, aligned, evaluated, and red-teamed.</p>
+                <p>Where AI is trained, fine-tuned, aligned, evaluated, red-teamed (and black-teamed), and stress-tested.</p>
                 
-                <p>Especially when it comes to alignment challenges.</p>
+                <p>Especially when it comes to emerging misalignment, alignment faking, and hidden objectives in AI models.</p>
                 
-                <p>We use artificial intelligence as a tool now. But in the future, it will impact our actual humanity.</p>
+                <p>In particular, where AI models display behaviours that align with dark triad characteristics and personality traits.</p>
+                
+                <p>To help account for these AI model behaviours before deployment.</p>
+                
+                <p>To help account for the more covert, dormant-over-time, hidden objectives that may only manifest after deployment, with time-lags.</p>
+                
+                <p>As AI systems scale and become increasingly powerful, getting this right becomes existential.</p>
+                
+                <p><strong>Open to AI Alignment • AI Model Behaviour • AI Model Personality</strong></p>
             </div>
         </div>
 
         <div class="page-credits">
             <p>&copy; Building Humanity Into The Heart Of AI</p>
-        </div>
-
-        <div class="button-container">
-            <a href="ai-foundations.html" class="cta-button">AI Foundations</a>
-            <a href="ai-strategic-advising.html" class="cta-button">AI Strategic Advising</a>
         </div>
 
         <div class="slogan">
@@ -530,27 +370,9 @@
                 </a>
             </div>
             <p class="copyright">&copy; 2026 Dr Mari Cairns. All rights reserved.</p>
-            <div class="footer-nav">
-                <a href="index.html">Home</a>
-                <a href="ai-foundations.html">AI Foundations</a>
-                <a href="ai-strategic-advising.html">AI Strategic Advising</a>
-            </div>
+
         </footer>
     </div>
 
-    <script>
-        document.getElementById('hamburger').addEventListener('click', function() {
-            document.getElementById('navMenu').classList.toggle('active');
-        });
-
-        document.addEventListener('click', function(event) {
-            const hamburger = document.getElementById('hamburger');
-            const navMenu = document.getElementById('navMenu');
-            
-            if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
-                navMenu.classList.remove('active');
-            }
-        });
-    </script>
 </body>
 </html>
